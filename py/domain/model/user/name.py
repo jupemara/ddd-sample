@@ -1,4 +1,4 @@
-from util.utilhoge import every
+from util.util import every
 
 class Name:
     def __init__(

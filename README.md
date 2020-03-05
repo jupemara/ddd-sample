@@ -3,7 +3,7 @@
 - go/ : Golang
 - py/ : Python
 
-Those sample codes implement almost same business rule. 
+Those sample codes implement almost same business rule.
 Current business rules for this projects are
 
 - ユーザ(DDDで言うところのEntity)は氏名とIdを持つ
