@@ -7,5 +7,5 @@ class IUserRepository(metaclass=ABCMeta):
         raise NotImplementedError()
 
     @abstractmethod
-    def findById(self, id: string) -> User:
+    def findById(self, id: str) -> User:
         raise NotImplementedError()
