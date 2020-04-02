@@ -2,7 +2,7 @@ from fastapi import HTTPException
 from pydantic import BaseModel
 from usecase.user.register import UserRegisterUsecase
 
-class User(BaseModel):
+class Request(BaseModel):
     first_name: str
     last_name: str
 
@@ -12,10 +12,8 @@ class UserRegisterController:
         usecase: UserRegisterUsecase
     ) -> None:
       self.__usecase = usecase
-    def handle(self, user: User) -> None:
+    def handle(self, user: Request) -> None:
         try:
-            self.usecase.execute(user.first_name, user.last_name)
-        except UserValidationError as e:
-            if e.custom_eror_code == "9999"
-                raise HTTPException(status_code=401, detail="validation error")
+            self.__usecase.execute(user.first_name, user.last_name)
+        except Exception:
             raise HTTPException(status_code=500, detail="internal server error")
